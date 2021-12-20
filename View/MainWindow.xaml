@@ -1,0 +1,40 @@
+﻿<Window x:Class="WpfApp1_MVVM.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1_MVVM.View"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+        mc:Ignorable="d"
+        Title="{Binding WindowTitle}" 
+        Height="450" Width="800" 
+        DataContext="{Binding Main, Source={StaticResource Locator}}"
+        Loaded="Window_Loaded">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger>
+            <mvvm:EventToCommand Command="{Binding FormLoad}"  PassEventArgsToCommand="True" />
+        </i:EventTrigger>
+
+        <i:EventTrigger>
+            <mvvm:EventToCommand Command="{Binding isMarriedCheck}" PassEventArgsToCommand="True"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Alt" Key="A" Command="{Binding KeyPressed}"/>
+    </Window.InputBindings>
+    
+    <Grid>
+        <Label x:Name="lblName" Content="Name" HorizontalAlignment="Left" Margin="79,29,0,0" VerticalAlignment="Top" Height="37" Width="132"/>
+        <Label x:Name="lblName_Copy" Content="Name: " HorizontalAlignment="Left" Margin="23,29,0,0" VerticalAlignment="Top" Height="37" Width="51"/>
+        <TextBox x:Name="txtColor" HorizontalAlignment="Left" Height="23" Margin="79,66,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="chkMarried" 
+                  Content="is Married" HorizontalAlignment="Left" Margin="79,113,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblAge" Content="Age" HorizontalAlignment="Left" Margin="257,29,0,0" VerticalAlignment="Top" Height="37" Width="132"/>
+        <Button Content="btnButton" Command="{Binding btnCommand}" HorizontalAlignment="Left" Margin="79,146,0,0" VerticalAlignment="Top" Width="96" RenderTransformOrigin="-2.333,0.26" Height="24"/>
+
+    </Grid>
+</Window>
