@@ -5,9 +5,7 @@ add 1 line
 add 2 line
 add 3 linehello my friend
 you are cool
-<<<<<<< HEAD
 come on i added this in local repo leh!!!
 
-=======
 i added this line in remote repo
 >>>>>>> 17dd35c48036559fd1ae004af74ef9052fffa6b2
