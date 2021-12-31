@@ -5,7 +5,6 @@ add 1 line
 add 2 line
 add 3 linehello my friend
 you are cool
-<<<<<<< HEAD
 come on i added this in local repo leh!!!
 
 ************************************
