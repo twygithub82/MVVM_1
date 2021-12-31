@@ -5,3 +5,4 @@ add 1 line
 add 2 line
 add 3 linehello my friend
 you are cool
+i added this line in remote repo
